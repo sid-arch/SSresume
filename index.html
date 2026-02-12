@@ -398,4 +398,87 @@
           <h2 class="section-title">Awards & Achievements</h2>
         </div>
         <div class="skills-container">
-          <div class="skill-chip">Guinness World Record — Most decimal pl
+          <div class="skill-chip">Guinness World Record — Most decimal places of Pi recited while juggling three objects (Fall 2025)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultConfig = {
+      full_name: "Siddharth Sureshh",
+      email: "sureshh.2@dublinstudents.net",
+      location: "Dublin, Ohio",
+      school: "Dublin Coffman High School",
+      grade_level: "Freshman",
+      graduation_year: "2029",
+      primary_color: "#ff006e",
+      secondary_color: "#3a86ff"
+    };
+
+    let config = { ...defaultConfig };
+
+    function getInitials(name) {
+      return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    }
+
+    function updateUI() {
+      document.getElementById('fullName').textContent = config.full_name || defaultConfig.full_name;
+      document.getElementById('emailDisplay').textContent = config.email || defaultConfig.email;
+      document.getElementById('locationDisplay').textContent = config.location || defaultConfig.location;
+      document.getElementById('schoolDisplay').textContent = config.school || defaultConfig.school;
+      document.getElementById('gradeLevelDisplay2').textContent = config.grade_level || defaultConfig.grade_level;
+      document.getElementById('graduationDisplay').textContent = config.graduation_year || defaultConfig.graduation_year;
+      
+      const initials = getInitials(config.full_name || defaultConfig.full_name);
+      document.getElementById('avatarCircle').textContent = initials;
+    }
+
+    async function initializeSDK() {
+      if (!window.elementSdk) {
+        console.error("Element SDK not available");
+        return;
+      }
+
+      await window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (updatedConfig) => {
+          config = updatedConfig;
+          updateUI();
+        },
+        mapToCapabilities: (cfg) => ({
+          recolorables: [
+            {
+              get: () => cfg.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => cfg.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ["full_name", cfg.full_name || defaultConfig.full_name],
+          ["email", cfg.email || defaultConfig.email],
+          ["location", cfg.location || defaultConfig.location],
+          ["school", cfg.school || defaultConfig.school],
+          ["grade_level", cfg.grade_level || defaultConfig.grade_level],
+          ["graduation_year", cfg.graduation_year || defaultConfig.graduation_year]
+        ])
+      });
+    }
+
+    initializeSDK();
+  </script>
+</body>
+</html>
