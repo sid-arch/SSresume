@@ -254,4 +254,166 @@
     }
 
     .achievement-badge:hover {
-      border-
+      border-color: rgba(255, 0, 110, 0.8);
+      background: linear-gradient(135deg, rgba(255, 0, 110, 0.25) 0%, rgba(131, 56, 236, 0.25) 100%);
+      box-shadow: 0 10px 30px rgba(255, 0, 110, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .avatar-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+      }
+
+      .name-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      }
+
+      .tools-list {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .resume-wrapper {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .name-title {
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1rem;
+      }
+
+      .skill-chip,
+      .tool-item {
+        min-height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-wrapper">
+    <div class="resume-container">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="avatar-circle" id="avatarCircle">SS</div>
+        <div class="header-content">
+          <h1 class="name-title" id="fullName">Siddharth Sureshh</h1>
+          <div class="contact-info">
+            <span class="contact-item" id="emailDisplay">sureshh.2@dublinstudents.net</span>
+            <span class="contact-item" id="locationDisplay">Dublin, Ohio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="edu-label">School</div>
+            <div class="edu-value" id="schoolDisplay">Dublin Coffman High School</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-label">Grade Level</div>
+            <div class="edu-value" id="gradeLevelDisplay2">Freshman</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-label">Expected Graduation</div>
+            <div class="edu-value" id="graduationDisplay">2029</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+        </div>
+        <div class="skills-container">
+          <div class="skill-chip">Logical Reasoning</div>
+          <div class="skill-chip">Educational Content Creation</div>
+          <div class="skill-chip">Teaching & Tutoring</div>
+          <div class="skill-chip">LaTeX Typesetting</div>
+          <div class="skill-chip">Web Design Fundamentals</div>
+          <div class="skill-chip">GitHub Usage</div>
+          <div class="skill-chip">Digital Illustration</div>
+          <div class="skill-chip">Vector Design</div>
+          <div class="skill-chip">3D Modeling</div>
+          <div class="skill-chip">Video Editing</div>
+          <div class="skill-chip">Presentation Design</div>
+          <div class="skill-chip">Project Planning</div>
+        </div>
+      </div>
+
+      <!-- Tools Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Tools & Technologies</h2>
+        </div>
+        <div class="tools-list">
+          <div class="tool-item">Blender</div>
+          <div class="tool-item">DaVinci Resolve</div>
+          <div class="tool-item">Affinity Designer</div>
+          <div class="tool-item">Keynote</div>
+          <div class="tool-item">Canva</div>
+        </div>
+      </div>
+
+      <!-- Awards Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Awards & Achievements</h2>
+        </div>
+        <div class="achievement-badge">
+          Most decimal places of Pi recited while juggling three objects - Fall 2025
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultConfig = {
+      full_name: "Siddharth Sureshh",
+      email: "sureshh.2@dublinstudents.net",
+      location: "Dublin, Ohio",
+      school: "Dublin Coffman High School",
+      grade_level: "Freshman",
+      graduation_year: "2029",
+      primary_color: "#ff006e",
+      secondary_color: "#3a86ff"
+    };
+
+    let config = { ...defaultConfig };
+
+    function getInitials(name) {
+      return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    }
+
+    function updateUI() {
+      document.getElementById('fullName')
