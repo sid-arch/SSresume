@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-full">
-<head>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Siddharth Sureshh - Resume</title>
@@ -251,6 +251,35 @@
       transform: scale(1.05);
     }
 
+    /* Publications */
+    .publication-item {
+      background: rgba(58, 134, 255, 0.1);
+      border: 1.5px solid rgba(58, 134, 255, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .publication-item:hover {
+      background: rgba(58, 134, 255, 0.2);
+      border-color: rgba(255, 0, 110, 0.6);
+      box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .publication-link {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      display: block;
+    }
+
+    .publication-link:hover {
+      color: #ff006e;
+    }
+
     @media (max-width: 768px) {
       .profile-header {
         flex-direction: column;
@@ -305,105 +334,157 @@
       }
     }
   </style>
-</head>
-<body>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
   <div class="resume-wrapper">
-    <div class="resume-container">
-      <!-- Profile Header -->
-      <div class="profile-header">
-        <div class="avatar-circle" id="avatarCircle">SS</div>
-        <div class="header-content">
-          <h1 class="name-title" id="fullName">Siddharth Sureshh</h1>
-          <p class="tagline">Student focused on mathematics, physics, and problem-solving.</p>
-          <div class="contact-info">
-            <span class="contact-item" id="publicNameDisplay">Public name: Sid</span>
-            <span class="contact-item" id="emailDisplay">sureshh.2@dublinstudents.net</span>
-            <span class="contact-item" id="locationDisplay">Dublin, Ohio</span>
-          </div>
-        </div>
+   <div class="resume-container"><!-- Profile Header -->
+    <div class="profile-header">
+     <div class="avatar-circle" id="avatarCircle">
+      SS
+     </div>
+     <div class="header-content">
+      <h1 class="name-title" id="fullName">Siddharth Sureshh</h1>
+      <p class="tagline">Student focused on mathematics, physics, and problem-solving.</p>
+      <div class="contact-info"><span class="contact-item" id="publicNameDisplay">Public name: Sid</span> <span class="contact-item" id="emailDisplay">sureshh.2@dublinstudents.net</span> <span class="contact-item" id="locationDisplay">Dublin, Ohio</span>
       </div>
-
-      <!-- Education Section -->
-      <div class="section">
-        <div class="section-header">
-          <h2 class="section-title">Education</h2>
-        </div>
-        <div class="education-grid">
-          <div class="edu-card">
-            <div class="edu-label">School</div>
-            <div class="edu-value" id="schoolDisplay">Dublin Coffman High School</div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-label">Grade Level</div>
-            <div class="edu-value" id="gradeLevelDisplay2">Freshman</div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-label">Expected Graduation</div>
-            <div class="edu-value" id="graduationDisplay">2029</div>
-          </div>
-        </div>
+     </div>
+    </div><!-- Education Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Education</h2>
+     </div>
+     <div class="education-grid">
+      <div class="edu-card">
+       <div class="edu-label">
+        School
+       </div>
+       <div class="edu-value" id="schoolDisplay">
+        Dublin Coffman High School
+       </div>
       </div>
-
-      <!-- Skills Section -->
-      <div class="section">
-        <div class="section-header">
-          <h2 class="section-title">Skills</h2>
-        </div>
-        <div class="skills-container">
-          <div class="skill-chip">Logical Reasoning</div>
-          <div class="skill-chip">Educational Content Creation</div>
-          <div class="skill-chip">Teaching & Tutoring</div>
-          <div class="skill-chip">LaTeX Typesetting</div>
-          <div class="skill-chip">Web Design Fundamentals</div>
-          <div class="skill-chip">GitHub Usage</div>
-          <div class="skill-chip">Digital Illustration</div>
-          <div class="skill-chip">Vector Design</div>
-          <div class="skill-chip">3D Modeling</div>
-          <div class="skill-chip">Video Editing</div>
-          <div class="skill-chip">Presentation Design</div>
-          <div class="skill-chip">Project Planning</div>
-        </div>
+      <div class="edu-card">
+       <div class="edu-label">
+        Grade Level
+       </div>
+       <div class="edu-value" id="gradeLevelDisplay2">
+        Freshman
+       </div>
       </div>
-
-      <!-- Tools Section -->
-      <div class="section">
-        <div class="section-header">
-          <h2 class="section-title">Tools & Technologies</h2>
-        </div>
-        <div class="tools-list">
-          <div class="tool-item">Blender</div>
-          <div class="tool-item">DaVinci Resolve</div>
-          <div class="tool-item">Affinity Designer</div>
-          <div class="tool-item">Keynote</div>
-          <div class="tool-item">Canva</div>
-        </div>
+      <div class="edu-card">
+       <div class="edu-label">
+        Expected Graduation
+       </div>
+       <div class="edu-value" id="graduationDisplay">
+        2029
+       </div>
       </div>
-
-      <!-- Personal Interests Section -->
-      <div class="section">
-        <div class="section-header">
-          <h2 class="section-title">Personal Interests</h2>
-        </div>
-        <div class="skills-container">
-          <div class="skill-chip">Cubing</div>
-          <div class="skill-chip">Pencil Sketching</div>
-          <div class="skill-chip">Creating Content</div>
-          <div class="skill-chip">Reading</div>
-        </div>
+     </div>
+    </div><!-- Skills Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Skills</h2>
+     </div>
+     <div class="skills-container">
+      <div class="skill-chip">
+       Logical Reasoning
       </div>
-
-      <!-- Awards Section -->
-      <div class="section">
-        <div class="section-header">
-          <h2 class="section-title">Awards & Achievements</h2>
-        </div>
-        <div class="skills-container">
-          <div class="skill-chip">Guinness World Record — Most decimal places of Pi recited while juggling three objects (Fall 2025)</div>
-        </div>
+      <div class="skill-chip">
+       Educational Content Creation
       </div>
+      <div class="skill-chip">
+       Teaching &amp; Tutoring
+      </div>
+      <div class="skill-chip">
+       LaTeX Typesetting
+      </div>
+      <div class="skill-chip">
+       Web Design Fundamentals
+      </div>
+      <div class="skill-chip">
+       GitHub Usage
+      </div>
+      <div class="skill-chip">
+       Digital Illustration
+      </div>
+      <div class="skill-chip">
+       Vector Design
+      </div>
+      <div class="skill-chip">
+       3D Modeling
+      </div>
+      <div class="skill-chip">
+       Video Editing
+      </div>
+      <div class="skill-chip">
+       Presentation Design
+      </div>
+      <div class="skill-chip">
+       Project Planning
+      </div>
+     </div>
+    </div><!-- Tools Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Tools &amp; Technologies</h2>
+     </div>
+     <div class="tools-list">
+      <div class="tool-item">
+       Blender
+      </div>
+      <div class="tool-item">
+       DaVinci Resolve
+      </div>
+      <div class="tool-item">
+       Affinity Designer
+      </div>
+      <div class="tool-item">
+       Keynote
+      </div>
+      <div class="tool-item">
+       Canva
+      </div>
+     </div>
+    </div><!-- Personal Interests Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Personal Interests</h2>
+     </div>
+     <div class="skills-container">
+      <div class="skill-chip">
+       Cubing
+      </div>
+      <div class="skill-chip">
+       Pencil Sketching
+      </div>
+      <div class="skill-chip">
+       Creating Content
+      </div>
+      <div class="skill-chip">
+       Reading
+      </div>
+     </div>
+    </div><!-- Awards Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Awards &amp; Achievements</h2>
+     </div>
+     <div class="skills-container">
+      <div class="skill-chip">
+       Guinness World Record — Most decimal places of Pi recited while juggling three objects (Fall 2025)
+      </div>
+     </div>
+    </div><!-- Publications Section -->
+    <div class="section">
+     <div class="section-header">
+      <h2 class="section-title">Publications (click title to view)</h2>
+     </div>
+     <div class="publication-item"><a href="https://medium.com/@king-sid/lift-and-drag-the-forces-that-govern-aerodynamic-performance-adf1baad3908" target="_blank" rel="noopener noreferrer" class="publication-link"> Lift and Drag: The Forces That Govern Aerodynamic Performance </a>
+     </div>
     </div>
+   </div>
   </div>
-
   <script>
     const defaultConfig = {
       full_name: "Siddharth Sureshh",
@@ -480,5 +561,5 @@
 
     initializeSDK();
   </script>
-</body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cd6079590e29d58',t:'MTc3MTAwMzU3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
